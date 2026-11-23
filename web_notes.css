@@ -1,7 +1,16 @@
+body{
+    background-color: rgb(244, 244, 255);
+    font-family: "Google Sans Flex", sans-serif;
+    font-weight: 300;
+}
+
+
+
 .container-nav{
     margin: 10px;
     margin-right: 20px;
     display: grid;
+    grid-template-rows: 200px 1fr;
 }
 .nav-tasks{
     list-style-type: none;
@@ -21,28 +30,23 @@
     font-size: 22px;
     margin-left: 5px;
 }
-body{
-    background-color: rgb(244, 244, 255);
-    font-family: "Google Sans Flex", sans-serif;
-    font-weight: 300;
-}
 
 .container-notes{
     border-top: 2px solid rgb(173, 173, 173);
     display: grid;
-    grid-template-columns: 250px 3fr 1fr;
+    grid-template-columns: 350px 3fr 1fr;
 }
 
 
 .container{
     display: grid;
-    grid-template-columns: 270px 1fr;
+    grid-template-columns: 350px 1fr;
 }
 
 .main-side{
     border-left: 2px solid rgb(173, 173, 173);
     display: grid;
-    grid-template-rows: 20% 1fr;
+    grid-template-rows: 80px 1fr;
 }
 
 .create-view-notes{
@@ -53,4 +57,59 @@ body{
     list-style-type: none;
     margin: 10px;
     padding: 0;
+}
+
+.create-new-note{
+    margin-top: 20px;
+    background: rgb(74, 74, 255);
+    border-color: rgb(74, 74, 255);
+    font-size: 17px ;
+    width: 300px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+}
+
+.tag{
+    border-radius: 5px;
+    background-color: rgb(204, 211, 219);
+    width: fit-content;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.note-date{
+    margin: 0;
+    margin-top: 8px;
+    color: rgb(110, 112, 115);
+}
+.note-tags{
+    display: flex;
+    gap: 5px;
+}
+
+.note-card{
+    margin: auto;
+    padding: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 286px;
+    background-color: rgb(244, 244, 255);
+    font-weight: 400;
+    border-radius: 7px;
+}
+.note-card:hover{
+    background-color: rgb(229, 233, 245);
+}
+.note-view{
+    text-align: left;
+    max-height: 650px;
+    overflow-y: auto;
+}
+
+.note-card-header{
+    margin: 0;
+    margin-bottom: 7px;
+    font-size: 20px;
+    font-weight: 600;
 }
