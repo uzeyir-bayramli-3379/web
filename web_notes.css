@@ -1,0 +1,56 @@
+.container-nav{
+    margin: 10px;
+    margin-right: 20px;
+    display: grid;
+}
+.nav-tasks{
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+}
+.nav-tasks>li{
+    margin-left: 10px;
+    margin-top: 20px;
+    font-size: 25px;
+}
+.nav-div{
+    border-top: 2px solid rgb(173, 173, 173);
+}
+.nav-tasks-header{
+    color: rgb(151, 151, 151);
+    font-size: 22px;
+    margin-left: 5px;
+}
+body{
+    background-color: rgb(244, 244, 255);
+    font-family: "Google Sans Flex", sans-serif;
+    font-weight: 300;
+}
+
+.container-notes{
+    border-top: 2px solid rgb(173, 173, 173);
+    display: grid;
+    grid-template-columns: 250px 3fr 1fr;
+}
+
+
+.container{
+    display: grid;
+    grid-template-columns: 270px 1fr;
+}
+
+.main-side{
+    border-left: 2px solid rgb(173, 173, 173);
+    display: grid;
+    grid-template-rows: 20% 1fr;
+}
+
+.create-view-notes{
+    border-right: 2px solid rgb(173, 173, 173);
+    text-align: center;
+}
+.note-view{
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+}
