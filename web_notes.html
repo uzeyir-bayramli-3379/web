@@ -70,14 +70,39 @@
                         </ul>
                     </div>
                     <div class="edit-note">
-                        <div class="note-head-detail">
-                            <h1>React Performance Optimization</h1>
-                            <p>Tags Dev,React</p>
-                            <p>Last edited 29 Oct 2024</p>
+                        <div class="containing-details">
+                            <div class="note-head-detail">
+                                <h1>React Performance Optimization</h1>
+                                <div class="note-details">
+                                    <div>Tags</div>
+                                    <div>Dev,React</div>
+                                    <div>Last Edited</div>
+                                    <div>29 Oct 2024</div>
+                                </div>
+                            </div>
+                            <div class="note-description">
+                                Key performance optimization techniques:
+
+                                1. Code Splitting
+                                - Use React.lazy() for route-based splitting
+                                - Implement dynamic imports for heavy components
+
+                                2. Memoization
+                                - useMemo for expensive calculations
+                                - useCallback for function props
+                                - React.memo for component optimization
+
+                                3. Virtual List Implementation
+                                - Use react-window for long lists
+                                - Implement infinite scrolling
+
+                                TODO: Benchmark current application and identify bottlenecks
+                            </div>
+                            <div class="save-cancel-note">
+                                <button class="save-note-but">Save Note</button><button class="cancel-note-but">Cancel</button>
+                            </div>
                         </div>
-                        <div class="not-description">
-                            <p>Lorem Ipsum something something bla bla bla</p>
-                        </div>
+                        
                     </div>
                     <div class="arch-del">
                             <button>Archive Note</button>
