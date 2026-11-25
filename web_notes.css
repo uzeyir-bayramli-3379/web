@@ -2,55 +2,84 @@ body{
     background-color: rgb(250, 250, 255);
     font-family: "Google Sans Flex", sans-serif;
     font-weight: 300;
+    
 }
 
-
+button, input, select, textarea {
+    font: inherit;
+    background-color: rgb(250, 250, 255);
+}
+svg{
+    width:22px;
+    height:22px;
+}
+div:hover>svg{
+    fill: rgb(0, 38, 255);
+}
 
 .container-nav{
     margin: 10px;
     margin-right: 20px;
     display: grid;
-    grid-template-rows: 200px 1fr;
+    grid-template-rows: 80px 175px 1fr;
 }
 .nav-tasks{
+    max-height: 65dvh;
+    overflow-y: auto;
     list-style-type: none;
     margin: 10px;
     padding: 0;
 }
 .nav-tasks>li{
     margin-left: 10px;
-    margin-top: 20px;
-    font-size: 25px;
+    margin-top: 5px;
+    font-size: 22px;
+}
+.nav-tasks>li>div{
+    transition: 100ms;
+    margin-right: 15px;
+    padding-left: 15px;
+    align-content: center;
+    height:50px
+}
+.nav-tasks>li>div:hover{
+    background-color: rgb(232, 235, 243);
+    border-radius: 7px;
+    border-color: rgb(232, 235, 243);
+}
+.nav-tasks>li>div>svg{
+    margin-top:auto;
+    margin-right: 15px;
 }
 .nav-div{
-    border-top: 2px solid rgb(195, 195, 195);
+    border-top: 1px solid rgb(213, 213, 213);
 }
 .nav-tasks-header{
     color: rgb(151, 151, 151);
-    font-size: 22px;
+    font-size: 21px;
     margin-left: 5px;
 }
 
 .container-notes{
-    border-top: 2px solid rgb(195, 195, 195);
     display: grid;
     grid-template-columns: 350px 3fr 1fr;
 }
 
 
 .container{
+    background-color: rgb(250, 250, 255);
     display: grid;
     grid-template-columns: 350px 1fr;
 }
 
 .main-side{
-    border-left: 2px solid rgb(195, 195, 195);
+    border-left: 1px solid rgb(213, 213, 213);
     display: grid;
     grid-template-rows: 80px 1fr;
 }
 
 .create-view-notes{
-    border-right: 2px solid rgb(195, 195, 195);
+    border-right: 1px solid rgb(213, 213, 213);
     text-align: center;
 }
 .note-view{
@@ -60,6 +89,8 @@ body{
 }
 
 .create-new-note{
+    transition: 100ms;
+    border: 0;
     margin-top: 20px;
     background: rgb(74, 74, 255);
     border-color: rgb(74, 74, 255);
@@ -69,7 +100,9 @@ body{
     color: rgb(255, 255, 255);
     border-radius: 8px;
 }
-
+.create-new-note:hover{
+    background: rgb(53, 53, 183);
+}
 .tag{
     border-radius: 5px;
     background-color: rgb(204, 211, 219);
@@ -98,7 +131,7 @@ body{
     width: 286px;
     font-weight: 400;
     border-radius: 0px;
-    border-bottom: 2px solid rgb(195, 195, 195);
+    border-bottom: 1px solid rgb(213, 213, 213);
 }
 .note-card:hover{
     background-color: rgb(232, 235, 243);
@@ -107,7 +140,7 @@ body{
 }
 .note-view{
     text-align: left;
-    max-height: 650px;
+    max-height: 100dvh;
     overflow-y: auto;
 }
 
@@ -123,7 +156,7 @@ body{
     padding: 30px;
     padding-top: 10px;
     display: grid;
-    grid-template-rows: 175px 1fr 60px;
+    grid-template-rows: 175px 1fr 0px;
 }
 .note-details{
     width: 300px;
@@ -134,7 +167,7 @@ body{
 }
 .note-head-detail{
     padding-bottom: 25px;
-    border-bottom: 2px solid rgb(195, 195, 195);
+    border-bottom: 1px solid rgb(213, 213, 213);
 }
 .note-description{
     white-space: pre-line;
@@ -143,10 +176,11 @@ body{
 }
 
 .save-cancel-note{
-    border-top: 2px solid rgb(195, 195, 195);
+    border-top: 1px solid rgb(213, 213, 213);
 }
 
 .save-note-but{
+    transition: 100ms;
     border: 0;
     margin-top: 20px;
     background: rgb(74, 74, 255);
@@ -160,7 +194,11 @@ body{
     padding-right: 15px;
     margin-right: 20px;
 }
+.save-note-but:hover{
+    background: rgb(53, 53, 183);
+}
 .cancel-note-but{
+    transition: 200ms;
     border: 0;
     margin-top: 20px;
     background: rgb(232, 235, 243);
@@ -173,20 +211,148 @@ body{
     padding-left: 15px;
     padding-right: 15px;
 }
-
+.cancel-note-but:hover{
+    background: rgb(144, 92, 92);
+    color: white;
+}
 .arch-del{
-    border-left: 2px solid rgb(195, 195, 195);
+    border-left: 1px solid rgb(213, 213, 213);
     display: grid;
     grid-template-rows: 60px 65px 1fr;
 }
-.arch-del>button{
+.arch-del>div{
+    display: flex;
     font-size: 17px;
     font-weight: 500;
-    text-align: left;
     height: 43px;
     background-color: rgb(250, 250, 255);
-    border: 2px solid rgb(195, 195, 195);
+    border: 2px solid rgb(213, 213, 213);
     border-radius: 7px;
     margin: 20px;
-    margin-left: 20px;
+}
+.arch-del>div>button{
+    border: 0;
+}
+.arch-del>div>svg{
+    margin-top:auto;
+    margin-bottom: auto;
+    margin-left: 7px;
+}
+.arch-del>div,.arch-del>div>button{
+    transition: 100ms;
+}
+.arch-del>div:hover,.arch-del>div:hover>button{
+    background-color: rgb(232, 235, 243);
+    
+}
+.all-notes{
+    display: grid;
+    border-bottom:1px solid rgb(213, 213, 213) ;
+    grid-template-columns: 1fr 350px 75px;
+}
+.all-notes>svg{
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    margin-top:20px;
+    fill: rgb(142, 141, 141);
+}
+.all-notes:hover>svg{
+    fill: rgb(142, 141, 141);
+}
+.settings-icon:hover{
+    fill: rgb(142, 141, 141);
+}
+.search-bar{
+    margin-top:10px;
+    border:2px solid rgb(213, 213, 213);
+    border-radius: 9px;
+    display: grid;
+    height: 45px;
+    grid-template-columns: 1fr 304px;
+}
+.search-bar>svg{
+    margin: auto;
+}
+.search-bar>input{
+    border: 0;
+    font-weight: 300;
+    width: 300px;
+    margin:auto
+}
+.search-bar>input::placeholder{
+    color: rgb(129, 129, 129);
+}
+.search-bar,.search-bar>input{
+    transition: 100ms;
+}
+.search-bar:hover,.search-bar:hover>input{
+    background-color: rgb(232, 235, 243);
+}
+.title-header{
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    font-family: "Beth Ellen", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
+}
+.title-header>svg{
+    fill:rgb(74, 74, 255);
+    margin-top: 20px;
+    width: 50px;
+    height: 50px;
+}
+.title-header>p{
+    margin: 0;
+}
+
+.choose-main{
+    margin-top: 30px;
+    display: grid;
+    grid-template-rows:auto;
+}
+.choose-main>div>button{
+    border: 0;
+    text-align: left;
+}
+.choose-all{
+    background-color: rgb(232, 235, 243);
+    border-radius: 7px;
+    border-color: rgb(232, 235, 243);
+    transition: 100ms;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    font-size: 22px;
+    height: 60px;
+}
+.choose-all>button{
+    background-color: rgb(232, 235, 243);
+}
+.choose-archive{
+    transition: 100ms;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    font-size: 22px;
+    height: 60px;
+}
+.choose-archive>button{
+    transition: 100ms;
+}
+.choose-archive>svg{
+    width: 29px;
+    height: 29px;
+}
+.choose-all>svg,.choose-archive>svg{
+    place-self: center;
+}
+.choose-archive:hover>button{
+    background-color: rgb(232, 235, 243);
+}
+.choose-archive:hover{
+    background-color: rgb(232, 235, 243);
+    border-radius: 7px;
+    border-color: rgb(232, 235, 243);
 }

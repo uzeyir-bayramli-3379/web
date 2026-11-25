@@ -14,11 +14,11 @@
 
 - [x] Format Note Cards , Fix Overall Spacing
 - [x] Format Note Description
-- [ ] Add Search Bar
+- [x] Add Search Bar
 - [x] Format Archive Note , Delete Note buttons
-- [ ] Format Remaining (Probably just left part , Notes and Navbar add logos etc.)
-- [ ] Add JS for the following:
-   1. Note cards
-   2. Note descriptions
-   3. Search bar (using existing data)
-   4. More TBD
+- [x] Format Remaining (Probably just left part , Notes and Navbar add logos etc.)
+- [x] Add JS for the following:
+   1. Note cards - YEP
+   2. Note descriptions - No
+   3. Search bar (using existing data) - No
+   4. More TBD - Nothing more
