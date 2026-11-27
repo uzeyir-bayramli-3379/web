@@ -1,226 +1,323 @@
-body{
+body {
     background-color: rgb(250, 250, 255);
     font-family: "Google Sans Flex", sans-serif;
     font-weight: 300;
-    
+    margin-top: 0;
+    margin-bottom: 0;
 }
-
+.non-pc{
+    display: none;
+}
 button, input, select, textarea {
     font: inherit;
     background-color: rgb(250, 250, 255);
 }
-svg{
-    width:22px;
-    height:22px;
-}
-div:hover>svg{
-    fill: rgb(0, 38, 255);
+
+svg {
+    width: 22px;
+    height: 22px;
 }
 
-.container-nav{
-    margin: 10px;
-    margin-right: 20px;
+div:hover > svg {
+    fill: rgb(74, 74, 255);
+}
+
+
+.container {
+    height: 100dvh;
     display: grid;
-    grid-template-rows: 80px 175px 1fr;
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: minmax(0, 1fr);;
 }
-.nav-tasks{
-    max-height: 65dvh;
-    overflow-y: auto;
-    list-style-type: none;
-    margin: 10px;
-    padding: 0;
+
+.container-notes {
+    display: grid;
+    grid-template-columns: 350px 3fr 1fr;
+    grid-template-rows: minmax(0, 1fr); 
 }
-.nav-tasks>li{
-    margin-left: 10px;
-    margin-top: 5px;
-    font-size: 22px;
+
+
+.main-side {
+    border-left: 1px solid rgb(213, 213, 213);
+    display: grid;
+    grid-template-rows: 80px minmax(0, 1fr);
 }
-.nav-tasks>li>div{
+.container-nav {
+    margin: 10px 20px 10px 10px;
+    display: grid;
+    grid-template-rows: 80px 175px minmax(0, 1fr);
+    min-height: 0;
+}
+
+.nav-div {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+
+.title-header {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    font-family: "Beth Ellen", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
+}
+
+.title-header > svg {
+    fill: rgb(74, 74, 255);
+    margin-top: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+.title-header > p {
+    margin: 0;
+}
+
+
+.choose-main {
+    margin-top: 30px;
+    display: grid;
+    grid-template-rows: auto;
+}
+
+.choose-main > div > button {
+    border: 0;
+    text-align: left;
+}
+
+.choose-all, .choose-archive {
     transition: 100ms;
-    margin-right: 15px;
-    padding-left: 15px;
-    align-content: center;
-    height:50px
+    display: grid;
+    align-items: center;
+    font-size: 22px;
+    height: 60px;
 }
-.nav-tasks>li>div:hover{
+
+.choose-all {
+    grid-template-columns: 50px 1fr 50px;
     background-color: rgb(232, 235, 243);
     border-radius: 7px;
-    border-color: rgb(232, 235, 243);
 }
-.nav-tasks>li>div>svg{
-    margin-top:auto;
-    margin-right: 15px;
+
+.choose-archive {
+    grid-template-columns: 50px 1fr;
 }
-.nav-div{
-    border-top: 1px solid rgb(213, 213, 213);
+
+.choose-all > svg, .choose-archive > svg {
+    place-self: center;
 }
-.nav-tasks-header{
+
+.choose-archive > svg {
+    width: 29px;
+    height: 29px;
+}
+
+.choose-all > button {
+    background-color: rgb(232, 235, 243);
+}
+
+.choose-archive > button {
+    transition: 100ms;
+}
+
+.choose-archive:hover, .choose-archive:hover > button {
+    background-color: rgb(232, 235, 243);
+}
+
+.choose-archive:hover {
+    border-radius: 7px;
+}
+
+
+.nav-tasks-header {
     color: rgb(151, 151, 151);
     font-size: 21px;
     margin-left: 5px;
 }
 
-.container-notes{
-    display: grid;
-    grid-template-columns: 350px 3fr 1fr;
-}
-
-
-.container{
-    background-color: rgb(250, 250, 255);
-    display: grid;
-    grid-template-columns: 350px 1fr;
-}
-
-.main-side{
-    border-left: 1px solid rgb(213, 213, 213);
-    display: grid;
-    grid-template-rows: 80px 1fr;
-}
-
-.create-view-notes{
-    border-right: 1px solid rgb(213, 213, 213);
-    text-align: center;
-}
-.note-view{
+.nav-tasks {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
     list-style-type: none;
     margin: 10px;
     padding: 0;
 }
 
-.create-new-note{
-    transition: 100ms;
-    border: 0;
-    margin-top: 20px;
-    background: rgb(74, 74, 255);
-    border-color: rgb(74, 74, 255);
-    font-size: 17px ;
-    width: 300px;
-    height: 50px;
-    color: rgb(255, 255, 255);
-    border-radius: 8px;
-}
-.create-new-note:hover{
-    background: rgb(53, 53, 183);
-}
-.tag{
-    border-radius: 5px;
-    background-color: rgb(204, 211, 219);
-    width: fit-content;
-    padding-left: 7px;
-    padding-right: 7px;
+.nav-tasks > li {
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 22px;
 }
 
-.note-date{
-    margin: 0;
-    margin-top: 8px;
+.nav-tasks > li > div {
+    transition: 100ms;
+    margin-right: 15px;
+    padding-left: 15px;
+    align-content: center;
+    height: 50px;
+}
+
+.nav-tasks > li > div:hover {
+    background-color: rgb(232, 235, 243);
+    border-radius: 7px;
+}
+
+.nav-tasks > li > div > svg {
+    margin-right: 15px;
+}
+
+
+.all-notes {
+    display: grid;
+    border-bottom: 1px solid rgb(213, 213, 213);
+    grid-template-columns: 1fr 350px 75px;
+}
+
+.all-notes > svg {
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    margin-top: 20px;
+    fill: rgb(142, 141, 141);
+}
+
+.all-notes:hover > svg, .settings-icon:hover {
+    fill: rgb(142, 141, 141);
+}
+
+.search-bar {
+    margin-top: 10px;
+    border: 2px solid rgb(213, 213, 213);
+    border-radius: 9px;
+    display: grid;
+    height: 45px;
+    grid-template-columns: 1fr 304px;
+}
+
+.search-bar > svg {
+    margin: auto;
+}
+
+.search-bar > input {
+    border: 0;
+    width: 300px;
+    margin: auto;
+}
+
+.search-bar > input::placeholder {
+    color: rgb(129, 129, 129);
+}
+
+.search-bar, .search-bar > input {
+    transition: 100ms;
+}
+
+.search-bar:hover, .search-bar:hover > input {
+    background-color: rgb(232, 235, 243);
+}
+
+
+.create-view-notes {
+    border-right: 1px solid rgb(213, 213, 213);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 0;
+}
+
+.note-view {
+    list-style-type: none;
+    flex: 1; 
+    min-height: 0;
+    overflow-y: auto;
+    align-self: stretch;
+    margin: 10px;
+    padding: 0;
+    text-align: left;
+}
+
+.note-card {
+    transition: 100ms;
+    margin: auto;
+    padding: 8px;
+    width: 286px;
+    font-weight: 400;
+    border-bottom: 1px solid rgb(213, 213, 213);
+}
+
+.note-card:hover {
+    background-color: rgb(232, 235, 243);
+    border-radius: 7px;
+    border-color: rgb(232, 235, 243);
+}
+
+.note-card-header {
+    margin: 0 0 15px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.note-date {
+    margin: 8px 0 0;
     color: rgb(110, 112, 115);
 }
-.note-tags{
+
+.note-tags {
     display: flex;
     gap: 7px;
     margin-bottom: 15px;
 }
 
-.note-card{
-    transition: 100ms;
-    margin: auto;
-    padding: 8px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    width: 286px;
-    font-weight: 400;
-    border-radius: 0px;
-    border-bottom: 1px solid rgb(213, 213, 213);
-}
-.note-card:hover{
-    background-color: rgb(232, 235, 243);
-    border-radius: 7px;
-    border-color: rgb(232, 235, 243);
-}
-.note-view{
-    text-align: left;
-    max-height: 100dvh;
-    overflow-y: auto;
+.tag {
+    border-radius: 5px;
+    background-color: rgb(204, 211, 219);
+    width: fit-content;
+    padding-inline: 7px;
 }
 
-.note-card-header{
-    margin: 0;
-    margin-bottom: 15px;
-    font-size: 20px;
-    font-weight: 600;
-}
 
-.containing-details{
-    height: 750px;
+.containing-details {
     padding: 30px;
     padding-top: 10px;
     display: grid;
-    grid-template-rows: 175px 1fr 0px;
+    grid-template-rows: auto minmax(0, 1fr) 50px;
+    min-height: 0;
 }
-.note-details{
+.note-head-detail{
+    margin-bottom: 40px;
+}
+.note-description {
+    border-top: 1px solid rgb(213, 213, 213);
+    white-space: pre-line;
+    line-height: 135%;
+    overflow-y: auto;
+}
+
+.note-details {
     width: 300px;
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     row-gap: 15px;
 }
-.note-head-detail{
-    padding-bottom: 25px;
-    border-bottom: 1px solid rgb(213, 213, 213);
-}
-.note-description{
-    white-space: pre-line;
-    line-height: 135%;
 
-}
 
-.save-cancel-note{
+.save-cancel-note {
     border-top: 1px solid rgb(213, 213, 213);
 }
 
-.save-note-but{
-    transition: 100ms;
-    border: 0;
-    margin-top: 20px;
-    background: rgb(74, 74, 255);
-    border-color: rgb(74, 74, 255);
-    font-size: 15px ;
-    width: fit-content;
-    height: 43px;
-    color: rgb(255, 255, 255);
-    border-radius: 8px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-right: 20px;
-}
-.save-note-but:hover{
-    background: rgb(53, 53, 183);
-}
-.cancel-note-but{
-    transition: 200ms;
-    border: 0;
-    margin-top: 20px;
-    background: rgb(232, 235, 243);
-    border-color: rgb(232, 235, 243);
-    font-size: 15px ;
-    width: fit-content;
-    height: 43px;
-    color: rgb(104, 104, 104);
-    border-radius: 8px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-.cancel-note-but:hover{
-    background: rgb(144, 92, 92);
-    color: white;
-}
-.arch-del{
+
+.arch-del {
     border-left: 1px solid rgb(213, 213, 213);
     display: grid;
     grid-template-rows: 60px 65px 1fr;
 }
-.arch-del>div{
+
+.arch-del > div {
     display: flex;
     font-size: 17px;
     font-weight: 500;
@@ -230,129 +327,171 @@ div:hover>svg{
     border-radius: 7px;
     margin: 20px;
 }
-.arch-del>div>button{
+
+.arch-del > div > button {
     border: 0;
 }
-.arch-del>div>svg{
-    margin-top:auto;
+
+.arch-del > div > svg {
+    margin-top: auto;
     margin-bottom: auto;
     margin-left: 7px;
 }
-.arch-del>div,.arch-del>div>button{
+
+.arch-del > div, .arch-del > div > button {
     transition: 100ms;
-}
-.arch-del>div:hover,.arch-del>div:hover>button{
-    background-color: rgb(232, 235, 243);
-    
-}
-.all-notes{
-    display: grid;
-    border-bottom:1px solid rgb(213, 213, 213) ;
-    grid-template-columns: 1fr 350px 75px;
-}
-.all-notes>svg{
-    width: 30px;
-    height: 30px;
-    margin: auto;
-    margin-top:20px;
-    fill: rgb(142, 141, 141);
-}
-.all-notes:hover>svg{
-    fill: rgb(142, 141, 141);
-}
-.settings-icon:hover{
-    fill: rgb(142, 141, 141);
-}
-.search-bar{
-    margin-top:10px;
-    border:2px solid rgb(213, 213, 213);
-    border-radius: 9px;
-    display: grid;
-    height: 45px;
-    grid-template-columns: 1fr 304px;
-}
-.search-bar>svg{
-    margin: auto;
-}
-.search-bar>input{
-    border: 0;
-    font-weight: 300;
-    width: 300px;
-    margin:auto
-}
-.search-bar>input::placeholder{
-    color: rgb(129, 129, 129);
-}
-.search-bar,.search-bar>input{
-    transition: 100ms;
-}
-.search-bar:hover,.search-bar:hover>input{
-    background-color: rgb(232, 235, 243);
-}
-.title-header{
-    display: grid;
-    grid-template-columns: 60px 1fr;
-    font-family: "Beth Ellen", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 35px;
-}
-.title-header>svg{
-    fill:rgb(74, 74, 255);
-    margin-top: 20px;
-    width: 50px;
-    height: 50px;
-}
-.title-header>p{
-    margin: 0;
 }
 
-.choose-main{
-    margin-top: 30px;
-    display: grid;
-    grid-template-rows:auto;
+.arch-del > div:hover, .arch-del > div:hover > button {
+    background-color: rgb(232, 235, 243);
 }
-.choose-main>div>button{
+
+
+.create-new-note, .save-note-but, .cancel-note-but {
     border: 0;
-    text-align: left;
+    margin-top: 20px;
+    border-radius: 8px;
 }
-.choose-all{
-    background-color: rgb(232, 235, 243);
-    border-radius: 7px;
-    border-color: rgb(232, 235, 243);
+
+.create-new-note, .save-note-but {
     transition: 100ms;
-    align-items: center;
-    display: grid;
-    grid-template-columns: 50px 1fr 50px;
-    font-size: 22px;
-    height: 60px;
+    background: rgb(74, 74, 255);
+    color: rgb(255, 255, 255);
 }
-.choose-all>button{
-    background-color: rgb(232, 235, 243);
+
+.create-new-note:hover, .save-note-but:hover {
+    background: rgb(53, 53, 183);
 }
-.choose-archive{
-    transition: 100ms;
-    align-items: center;
-    display: grid;
-    grid-template-columns: 50px 1fr;
-    font-size: 22px;
-    height: 60px;
+
+.create-new-note {
+    font-size: 17px;
+    width: 300px;
+    height: 50px;
 }
-.choose-archive>button{
-    transition: 100ms;
+
+.save-note-but, .cancel-note-but {
+    font-size: 15px;
+    width: fit-content;
+    height: 43px;
+    padding-inline: 15px;
 }
-.choose-archive>svg{
-    width: 29px;
-    height: 29px;
+
+.save-note-but {
+    margin-right: 20px;
 }
-.choose-all>svg,.choose-archive>svg{
-    place-self: center;
+
+.cancel-note-but {
+    transition: 200ms;
+    background: rgb(232, 235, 243);
+    color: rgb(104, 104, 104);
 }
-.choose-archive:hover>button{
-    background-color: rgb(232, 235, 243);
+
+.cancel-note-but:hover {
+    background: rgb(144, 92, 92);
+    color: white;
 }
-.choose-archive:hover{
-    background-color: rgb(232, 235, 243);
-    border-radius: 7px;
-    border-color: rgb(232, 235, 243);
+
+
+.note-details>div>svg{
+    width: 17px;
+    height: 17px;
+}
+.note-details>div{
+    display: inline-flex;
+    align-items: center;  
+    gap: 10px;
+}
+.note-details>div:hover>svg{
+    fill: inherit
+}
+
+@media (max-width: 1000px){
+    body{
+        margin: 0;
+    }
+    .non-pc{
+        display: block;
+    }
+    .container{
+        padding: 0;
+        grid-template-columns: none;
+        grid-template-rows: 100px 1fr;
+    }
+    .pc-only{
+        display: none;
+    }
+    .container-notes,.containing-details,.main-side{
+        display: grid;
+        grid: none;
+    }
+    .container-nav{
+        margin: 0;
+        grid: none;
+        background-color: rgb(232, 235, 243);
+        align-items: center;
+    }
+    .title-header{
+        margin-left: 25px;
+    }
+    .main-side{
+        grid-template-rows: auto 90px;
+        border: 0;
+    }
+    .container-notes{
+        grid-template-rows: auto 50px;
+    }
+    .containing-details{
+        grid-template-rows: 60px auto 1fr;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .top-menu{
+        display: grid;
+        grid-template-columns: 95px 1fr 250px;
+        border-bottom: 1px solid rgb(213, 213, 213);
+    }
+    .top-menu>button,.top-menu>div>button{
+        color: rgb(129, 129, 129);
+        width: max-content;
+        border: 0;
+        display: inline-flex;
+        align-items: center;  
+    }
+    
+    .other-four-in-menu{
+        display: flex;
+        gap: 10px;
+    }
+    .other-four-in-menu>button>svg{
+        fill:rgb(129, 129, 129);
+    }
+    .note-description{
+        border: 0;
+        border-top: 1px solid rgb(213, 213, 213);
+    }
+    .bottom-menu{
+        box-shadow: 0px 0px 8px rgb(203, 206, 210);
+        border-top: 1px solid rgb(213, 213, 213);
+        display: grid;
+        grid-template-columns: repeat(5 ,1fr);
+    }
+    .bottom-menu>button{
+        border: 0;
+        border-right: 1px solid rgb(213, 213, 213);
+        margin-top: 15px;
+        margin-bottom: 15px;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;
+        place-items: center;
+    }
+}
+
+@media (max-width:550px){
+    .bottom-menu>button{
+        display: block;
+    }
+    .bottom-menu>button>span{
+        display: none;
+    }
 }
